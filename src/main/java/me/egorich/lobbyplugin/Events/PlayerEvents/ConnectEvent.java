@@ -1,6 +1,8 @@
 package me.egorich.lobbyplugin.Events.PlayerEvents;
 
+import me.egorich.lobbyplugin.Utils.ScoreboardManager.ScoreboardManager;
 import net.kyori.adventure.text.Component;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,6 +15,10 @@ public class ConnectEvent implements Listener {
 
         e.joinMessage(Component.text(""));
 
-        player.sendTitle("Добро пожаловать на наш сервер", "Ваш ник: " + player.getName());
+        player.sendTitle(ChatColor.GREEN + "Добро пожаловать на наш сервер",  ChatColor.GRAY + "Ваш ник: " + player.getName());
+
+        new ScoreboardManager(player)
+                .setStats()
+                .show();
     }
 }

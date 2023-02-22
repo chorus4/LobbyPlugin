@@ -11,7 +11,6 @@ public abstract class AbstractCommands implements CommandExecutor {
 
     public AbstractCommands(String name) {
         PluginCommand command = Main.getPlugin().getCommand(name);
-        assert command != null;
         command.setExecutor(this);
     }
 

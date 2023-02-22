@@ -1,12 +1,16 @@
 package me.egorich.lobbyplugin.Events.PlayerEvents;
 
 import me.egorich.lobbyplugin.Utils.ScoreboardManager.ScoreboardManager;
+import me.egorich.lobbyplugin.Utils.TabManager.TabAnimation;
+import me.egorich.lobbyplugin.Utils.TabManager.TabManager;
 import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+
+import java.util.Objects;
 
 public class ConnectEvent implements Listener {
     @EventHandler
@@ -20,5 +24,14 @@ public class ConnectEvent implements Listener {
         new ScoreboardManager(player)
                 .setStats()
                 .show();
+
+        TabManager tabManager = new TabManager();
+
+        tabManager.addHeaderLine("      &eПриятной игры!      ");
+        tabManager.addHeaderLine(" ");
+
+        tabManager.update(player);
+
+        new TabAnimation().start();
     }
 }

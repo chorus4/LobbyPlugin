@@ -7,6 +7,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Score;
 
+import javax.annotation.Nullable;
+
 public class ScoreboardManager {
 //    private Scoreboard scoreboard;
     private final Player player;
@@ -33,7 +35,7 @@ public class ScoreboardManager {
     }
 
     public ScoreboardManager setStats() {
-        createScore(" " , 1);
+        createScore(" ", 1);
         createScore(ChatColor.YELLOW + "Ваш ник: " + player.getName(), 1);
         createScore(ChatColor.YELLOW + "Ваш опыт: " + player.getExp(), 1);
 

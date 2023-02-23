@@ -3,5 +3,7 @@ version: '${project.version}'
 main: me.egorich.lobbyplugin.Main
 api-version: 1.18
 
+depend: [PlaceholderAPI]
+
 commands:
   shutdown: {}

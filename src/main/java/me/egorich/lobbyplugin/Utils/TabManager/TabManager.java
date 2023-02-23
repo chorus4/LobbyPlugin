@@ -1,5 +1,6 @@
 package me.egorich.lobbyplugin.Utils.TabManager;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.egorich.lobbyplugin.Utils.ColorUtils.ColorUtils;
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;
@@ -9,14 +10,16 @@ import java.util.List;
 
 public class TabManager {
 
-    private List<String> header = new ArrayList<>();
-    private List<String> footer = new ArrayList<>();
+    private final List<String> header = new ArrayList<>();
+    private final List<String> footer = new ArrayList<>();
 
     public void update(Player player) {
         player.sendPlayerListHeader(
                 Component.text(
                         ColorUtils.convert(
-                                convert(header)
+                                convert(
+                                        PlaceholderAPI.setPlaceholders(player, header)
+                                )
                         )
                 )
         );
@@ -24,7 +27,9 @@ public class TabManager {
         player.sendPlayerListFooter(
                 Component.text(
                         ColorUtils.convert(
-                                convert(footer)
+                                convert(
+                                        PlaceholderAPI.setPlaceholders(player, footer)
+                                )
                         )
                 )
         );

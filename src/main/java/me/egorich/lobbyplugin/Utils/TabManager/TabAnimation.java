@@ -8,9 +8,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TabAnimation {
-    private final TabManager manager = new TabManager();
-
-    public void start() {
+    public void start(TabManager manager) {
         Bukkit.getScheduler().runTaskTimerAsynchronously(Main.getPlugin(),  () -> {
             for (Player player: Bukkit.getOnlinePlayers()) {
                 manager.update(player);

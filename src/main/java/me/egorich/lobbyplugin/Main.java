@@ -2,6 +2,8 @@ package me.egorich.lobbyplugin;
 
 import me.egorich.lobbyplugin.Commands.InitCommands;
 import me.egorich.lobbyplugin.Events.EventRegister;
+import me.egorich.lobbyplugin.Utils.TabManager.TabAnimation;
+import me.egorich.lobbyplugin.Utils.TabManager.TabManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,6 +22,15 @@ public final class Main extends JavaPlugin {
 
         new InitCommands();
         new EventRegister();
+
+        TabManager tabManager = new TabManager();
+
+        tabManager.addHeaderLine("      &aПриятной игры!      ");
+        tabManager.addHeaderLine(" ");
+        tabManager.addHeaderLine("      &eВаш пинг: %player_ping%      ");
+        tabManager.addHeaderLine(" ");
+
+        new TabAnimation().start(tabManager);
     }
 
     @Override

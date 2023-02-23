@@ -24,14 +24,5 @@ public class ConnectEvent implements Listener {
         new ScoreboardManager(player)
                 .setStats()
                 .show();
-
-        TabManager tabManager = new TabManager();
-
-        tabManager.addHeaderLine("      &eПриятной игры!      ");
-        tabManager.addHeaderLine(" ");
-
-        tabManager.update(player);
-
-        new TabAnimation().start();
     }
 }

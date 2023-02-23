@@ -2,10 +2,14 @@ package me.egorich.lobbyplugin;
 
 import me.egorich.lobbyplugin.Commands.InitCommands;
 import me.egorich.lobbyplugin.Events.EventRegister;
+import me.egorich.lobbyplugin.Utils.ScoreboardManager.Scoreboard;
+import me.egorich.lobbyplugin.Utils.ScoreboardManager.ScoreboardManager;
 import me.egorich.lobbyplugin.Utils.TabManager.TabAnimation;
 import me.egorich.lobbyplugin.Utils.TabManager.TabManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scoreboard.DisplaySlot;
+import org.bukkit.scoreboard.Score;
 
 public final class Main extends JavaPlugin {
 

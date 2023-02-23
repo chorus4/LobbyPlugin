@@ -24,5 +24,7 @@ public class ConnectEvent implements Listener {
         new ScoreboardManager(player)
                 .setStats()
                 .show();
+
+        player.setArrowCooldown(10000);
     }
 }

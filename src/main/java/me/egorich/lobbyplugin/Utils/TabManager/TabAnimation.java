@@ -15,4 +15,13 @@ public class TabAnimation {
             }
         }, 0, 1);
     }
+
+    public void start(TabManager manager, TabManager admManager) {
+        for (Player player: Bukkit.getOnlinePlayers()) {
+            manager.update(player);
+            if (player.isOp()) {
+                admManager.update(player);
+            }
+        }
+    }
 }

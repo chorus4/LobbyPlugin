@@ -14,11 +14,20 @@ public class TabManager {
     private final List<String> footer = new ArrayList<>();
 
     public void update(Player player) {
+
+        List<String> opFooter = new ArrayList<>();
+
+        if (player.isOp()) {
+            opFooter.add(" ");
+            opFooter.add("&cВы админ");
+        }
+
         player.sendPlayerListHeader(
                 Component.text(
                         ColorUtils.convert(
                                 convert(
                                         PlaceholderAPI.setPlaceholders(player, header)
+
                                 )
                         )
                 )
@@ -29,6 +38,8 @@ public class TabManager {
                         ColorUtils.convert(
                                 convert(
                                         PlaceholderAPI.setPlaceholders(player, footer)
+                                ) + convert(
+                                        PlaceholderAPI.setPlaceholders(player, opFooter)
                                 )
                         )
                 )

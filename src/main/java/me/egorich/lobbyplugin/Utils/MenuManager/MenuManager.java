@@ -16,6 +16,8 @@ import java.util.UUID;
 public class MenuManager {
 
     private static final Map<UUID, Inventory> menus = new HashMap<>();
+    private static final Map<UUID, String> names = new HashMap<>();
+
     private static final Map<UUID, OnCLick> onClickCall = new HashMap<>();
     private static final Map<UUID, OnOpen> onOpenCall = new HashMap<>();
     private static final Map<UUID, OnClose> onCloseCall = new HashMap<>();
@@ -26,7 +28,7 @@ public class MenuManager {
         Bukkit.getPluginManager().registerEvents(new EventListener(), plugin);
     }
 
-    public static UUID createMenu(String name, Integer size, Map<ItemStack, Integer> slots, ItemStack emptySlot) {
+    public static UUID createMenu(String name, Integer size, String id, Map<ItemStack, Integer> slots, ItemStack emptySlot) {
         UUID uuid = UUID.randomUUID();
 
         Inventory menu = Bukkit.createInventory(null, size, name);
@@ -42,8 +44,23 @@ public class MenuManager {
         }
 
         menus.put(uuid, menu);
+        names.put(uuid, id);
 
         return uuid;
+    }
+
+    public static Inventory getMenu(String name) {
+        UUID uuid = null;
+
+        for (UUID uuids: names.keySet()) {
+            if (names.get(uuids) == name) {
+                uuid = uuids;
+            }
+        }
+
+        if (uuid == null) return null;
+
+        return menus.get(uuid);
     }
 
     public static void addListeners(UUID uuid, OnCLick onClick, OnOpen onOpen, OnClose onClose) {

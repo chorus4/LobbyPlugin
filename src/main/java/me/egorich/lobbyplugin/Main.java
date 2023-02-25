@@ -2,6 +2,7 @@ package me.egorich.lobbyplugin;
 
 import me.egorich.lobbyplugin.Commands.InitCommands;
 import me.egorich.lobbyplugin.Events.EventRegister;
+import me.egorich.lobbyplugin.Utils.MenuManager.MenuManager;
 import me.egorich.lobbyplugin.Utils.ScoreboardManager.Scoreboard;
 import me.egorich.lobbyplugin.Utils.ScoreboardManager.ScoreboardManager;
 import me.egorich.lobbyplugin.Utils.TabManager.TabAnimation;
@@ -35,6 +36,7 @@ public final class Main extends JavaPlugin {
         tabManager.addHeaderLine(" ");
 
         new TabAnimation().start(tabManager);
+        new MenuManager();
     }
 
     @Override

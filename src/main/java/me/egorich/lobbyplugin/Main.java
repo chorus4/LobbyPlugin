@@ -8,9 +8,15 @@ import me.egorich.lobbyplugin.Utils.ScoreboardManager.ScoreboardManager;
 import me.egorich.lobbyplugin.Utils.TabManager.TabAnimation;
 import me.egorich.lobbyplugin.Utils.TabManager.TabManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Score;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public final class Main extends JavaPlugin {
 

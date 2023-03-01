@@ -44,7 +44,8 @@ public class MenuManager {
         }
 
         menus.put(uuid, menu);
-        names.put(uuid, id);
+
+        if (id != null) names.put(uuid, id);
 
         return uuid;
     }

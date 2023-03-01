@@ -1,7 +1,5 @@
 package me.egorich.lobbyplugin.Events.PlayerEvents;
 
-import me.egorich.lobbyplugin.Utils.MenuManager.MenuManager;
-import me.egorich.lobbyplugin.Utils.MusicStudio.MusicStudio;
 import me.egorich.lobbyplugin.Utils.ScoreboardManager.ScoreboardManager;
 import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;

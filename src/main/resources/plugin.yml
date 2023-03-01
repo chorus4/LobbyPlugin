@@ -7,3 +7,8 @@ depend: [PlaceholderAPI]
 
 commands:
   shutdown: {}
+  permission:
+    description: Команда для управления правами
+    aliases:
+      - pr
+    usage: /pr {add|remove} (Имя игрока) (Имя права)

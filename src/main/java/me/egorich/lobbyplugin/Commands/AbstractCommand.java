@@ -7,18 +7,17 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginCommand;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class AbstractCommands implements CommandExecutor {
+public abstract class AbstractCommand implements CommandExecutor {
 
-    public AbstractCommands(String name) {
+    public AbstractCommand(String name) {
         PluginCommand command = Main.getPlugin().getCommand(name);
         command.setExecutor(this);
     }
 
-    public abstract void execute(CommandSender sender, Command command, String[] args);
+    public abstract boolean execute(CommandSender sender, Command command, String[] args);
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        execute(sender, command, args);
-        return true;
+        return execute(sender, command, args);
     }
 }

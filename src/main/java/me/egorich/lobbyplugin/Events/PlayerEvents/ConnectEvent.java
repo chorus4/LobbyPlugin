@@ -1,5 +1,6 @@
 package me.egorich.lobbyplugin.Events.PlayerEvents;
 
+import me.egorich.lobbyplugin.Commands.PlayerCommands.Essentials.VanishCommand;
 import me.egorich.lobbyplugin.Utils.ScoreboardManager.ScoreboardManager;
 import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;
@@ -20,6 +21,12 @@ public class ConnectEvent implements Listener {
         new ScoreboardManager(player)
                 .setStats()
                 .show();
+
+        // Vanish
+
+        for (Player players: VanishCommand.vanishPlayers) {
+            player.hidePlayer(players);
+        }
 
         // Test
 

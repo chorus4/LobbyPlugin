@@ -22,6 +22,11 @@ public class VanishCommand extends AbstractCommand {
     public boolean execute(CommandSender sender, Command command, String[] args) {
         Player player = (Player) sender;
 
+        if (!player.hasPermission("essentials.vanish")) {
+            player.sendMessage("У вас нет прав на использование этой команды!");
+            return true;
+        }
+
         if (vanishPlayers.contains(player)) {
             for (Player people: Bukkit.getOnlinePlayers()) {
                 people.showPlayer(player);

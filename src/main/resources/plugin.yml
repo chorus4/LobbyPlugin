@@ -12,3 +12,9 @@ commands:
     aliases:
       - pr
     usage: /pr {add|remove} (Имя игрока) (Имя права)
+
+  vanish:
+    description: Стать невидимым
+    aliases:
+      - vn
+    usage: /vanish

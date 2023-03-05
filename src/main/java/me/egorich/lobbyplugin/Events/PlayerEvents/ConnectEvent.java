@@ -1,6 +1,8 @@
 package me.egorich.lobbyplugin.Events.PlayerEvents;
 
 import me.egorich.lobbyplugin.Commands.PlayerCommands.Essentials.VanishCommand;
+import me.egorich.lobbyplugin.Menus.ServerChoiseMenu;
+import me.egorich.lobbyplugin.Utils.MenuManager.MenuManager;
 import me.egorich.lobbyplugin.Utils.ScoreboardManager.ScoreboardManager;
 import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;
@@ -27,6 +29,8 @@ public class ConnectEvent implements Listener {
         for (Player players: VanishCommand.vanishPlayers) {
             player.hidePlayer(players);
         }
+
+        player.openInventory(MenuManager.getMenu(new ServerChoiseMenu().getMenu()));
 
         // Test
 

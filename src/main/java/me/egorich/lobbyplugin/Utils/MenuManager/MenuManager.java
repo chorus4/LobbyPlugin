@@ -87,7 +87,7 @@ public class MenuManager {
 
         if (callback == null) return;
 
-        callback.onClick(player);
+        callback.onClick(e);
     }
     public static void onEvent(InventoryOpenEvent e) {
         Inventory menu = e.getInventory();
@@ -106,7 +106,7 @@ public class MenuManager {
 
         if (callback == null) return;
 
-        callback.onOpen(player);
+        callback.onOpen(e);
     }
     public static void onEvent(InventoryCloseEvent e) {
         Inventory menu = e.getInventory();
@@ -125,7 +125,7 @@ public class MenuManager {
 
         if (callback == null) return;
 
-        callback.onClose(player);
+        callback.onClose(e);
     }
 
     public static Inventory getMenu(UUID uuid) {
@@ -143,7 +143,7 @@ public class MenuManager {
     public static Map<UUID, Inventory> getMenus() {
         return menus;
     }
-    public interface OnCLick { public void onClick(Player player); }
-    public interface OnOpen { public void onOpen(Player player); }
-    public interface OnClose { public void onClose(Player player); }
+    public interface OnCLick { public void onClick(InventoryClickEvent event); }
+    public interface OnOpen { public void onOpen(InventoryOpenEvent event); }
+    public interface OnClose { public void onClose(InventoryCloseEvent event); }
 }

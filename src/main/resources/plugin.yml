@@ -18,3 +18,7 @@ commands:
     aliases:
       - vn
     usage: /vanish
+
+  setbuilder:
+    description: Добавить кого-то в групу строителей
+    usage: /setbuilder (Имя игрока) {1|0}

@@ -14,17 +14,19 @@ public class SetBuilderCommand extends AbstractCommand {
 
     @Override
     public boolean execute(CommandSender sender, Command command, String[] args) {
-        Player player = (Player) sender;
+//        Player player = (Player) sender;
+        System.out.println(args.length);
 
-        if (!player.isOp()) {
-            player.sendMessage("Вы не можете использовать эту команду!");
+        if (!sender.isOp()) {
+            sender.sendMessage("Вы не можете использовать эту команду!");
             return true;
         }
 
         if (args.length < 2) {
-            player.sendMessage("Неправильные аргументы!");
+            sender.sendMessage("Неправильные аргументы!");
             return false;
         }
+
 
         Player target = Bukkit.getPlayer(args[0]);
 
@@ -34,6 +36,8 @@ public class SetBuilderCommand extends AbstractCommand {
         } else {
             Permissions.add(target, "server.builder");
         }
+
+        sender.sendMessage(String.valueOf(Integer.parseInt(args[1])));
 
         return true;
     }
